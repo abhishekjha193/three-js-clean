@@ -12,11 +12,13 @@ const Navbar = () => {
 
     links.forEach((elem) => {
       let element = elem as HTMLAnchorElement;
+
       element.addEventListener("click", (e) => {
         if (window.innerWidth > 1024) {
           e.preventDefault();
-          let elem = e.currentTarget as HTMLAnchorElement;
-          let section = elem.getAttribute("data-href");
+
+          let target = e.currentTarget as HTMLAnchorElement;
+          let section = target.getAttribute("data-href");
 
           document
             .querySelector(section!)
@@ -32,6 +34,7 @@ const Navbar = () => {
         <a href="/#" className="navbar-title" data-cursor="disable">
           ABHISHEK JHA
         </a>
+
         <a
           href="mailto:abhibj2003@gmail.com"
           className="navbar-connect"
@@ -39,6 +42,7 @@ const Navbar = () => {
         >
           abhibj2003@gmail.com
         </a>
+
         <ul>
           <li>
             <a data-href="#about" href="#about">
